@@ -1,0 +1,20 @@
+<section class="project-listings" *ngFor="let project of projects">
+  <div class="project-card">
+    <img [src]="imageUrl" alt="Logo" />
+    <p class="project-name">{{ project.title }}</p>
+    <p class="project-description">{{ project.description }}</p>
+    <p class="project-description">{{ project.createdAt }}</p>
+    <div class="buttons">
+      <div>
+        <a routerLink="{{'view/'+project.id}}">
+          <button  class="add-to-cart-button" routerLink="{{'view/'+project.id}}">View Project</button>
+        </a>
+      </div>
+      <div class="btn-edit-delete">
+        <button class="add-to-cart-button" (click)="onDeleteProject(project.id)">Delete</button>
+        <button class="add-to-cart-button" routerLink="{{'edit/'+project.id}}">Edit</button>
+      </div>
+    </div>
+  </div>
+</section>
+
