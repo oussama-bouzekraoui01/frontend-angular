@@ -9,11 +9,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {ProjectService} from "./services/project.service";
 import { ListProjectsComponent } from './list-projects/list-projects.component';
+import { ViewComponent } from './view/view.component';
+
 
 const appRoutes: Routes = [
-  {path: "edit", component: EditComponent},
-  {path : "add", component: AddComponent},
-  {path : "editProject/:id", component: EditComponent}
+  {path : "projects/view/:id", component : ViewComponent},
+  {path : "projects", component: ListProjectsComponent},
+  {path: "projects/edit/:id", component: EditComponent},
+  {path : "projects/add", component: AddComponent},
+  {path : "projects/editProject/:id", component: EditComponent}
 ];
 
 @NgModule({
@@ -21,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     EditComponent,
     AddComponent,
-    ListProjectsComponent
+    ListProjectsComponent,
+    ViewComponent
   ],
   imports: [
     HttpClientModule,

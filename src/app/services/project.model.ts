@@ -5,8 +5,10 @@ enum Priority {
 }
 
 export interface ProjectModel {
-  id : number
+  id : string
   title : string;
   description : string;
   priority : Priority;
+  createdAt : string;
+  order : number;
 }
